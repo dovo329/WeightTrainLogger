@@ -18,9 +18,9 @@
         self.textField = [[UITextField alloc] init];
         self.plateCalcView = [[UIView alloc] init];
         
-        self.descLabel.backgroundColor = [UIColor purpleColor];
-        self.textField.backgroundColor = [UIColor blueColor];
-        self.plateCalcView.backgroundColor = [UIColor orangeColor];
+        self.descLabel.backgroundColor = [UIColor clearColor];
+        self.textField.backgroundColor = [UIColor whiteColor];
+        //self.plateCalcView.backgroundColor = [UIColor orangeColor];
         
         //self.descLabel.frame = CGRectMake(0.0, 80.0, 320.0, 10.0);
         //self.textField.frame = CGRectMake(0.0, 120.0, 320.0, 10.0);
@@ -42,11 +42,13 @@
         self.descLabel.adjustsFontSizeToFitWidth = NO;
         int fontHeight = (int)(0.5*CGRectGetHeight(self.contentView.frame));
         self.descLabel.font = [UIFont systemFontOfSize:fontHeight];
+        
+        self.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
+        self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
     }
     
     return self;
 }
-
 
 -(void)descLabelConstraints:(NSMutableArray *)mutArr {
     
@@ -140,10 +142,25 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    UIColor *backgroundColor = self.textField.backgroundColor;
+    [super setHighlighted:highlighted animated:animated];
+    self.imageView.backgroundColor = backgroundColor;
+    [self resetBackgroundColors:backgroundColor];
+}
 
-    // Configure the view for the selected state
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    UIColor *backgroundColor = self.textField.backgroundColor;
+    [super setSelected:selected animated:animated];
+    self.imageView.backgroundColor = backgroundColor;
+    [self resetBackgroundColors:backgroundColor];
+}
+
+- (void)resetBackgroundColors:(UIColor *)backgroundColor
+{
+    self.textField.backgroundColor = backgroundColor;
 }
 
 @end
