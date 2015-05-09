@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Exercise.h"
 
-@interface ExerciseDetailViewController : UITableViewController <UITableViewDataSource>
+@interface ExerciseDetailViewController : UITableViewController <UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) Exercise *exercise;
 @property (nonatomic, strong) UIToolbar *numberToolbar;

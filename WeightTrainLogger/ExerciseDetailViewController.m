@@ -64,26 +64,26 @@ static const NSString *cellID = @"detailCellID";
     // Configure the cell...
     if (indexPath.row == 0) {
         cell.descLabel.text = @"Bodyweight";
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
         //cell.plateCalcView = ;
     } else if (indexPath.row == 1) {
         cell.descLabel.text = @"Work Weight";
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
     } else if (indexPath.row == 2) {
         cell.descLabel.text = @"Start Weight";
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
     } else if (indexPath.row == 3) {
         cell.descLabel.text = @"# Warmup Sets";
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
     } else if (indexPath.row >= 4 && indexPath.row < 4 + self.exercise.numWarmupSets) {
         cell.descLabel.text = [NSString stringWithFormat:@"Warmup Set #%d", (int)((indexPath.row-4)+1)];
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
     } else if (indexPath.row == (4 + self.exercise.numWarmupSets)) {
         cell.descLabel.text = @"# Work Sets";
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
     } else {
         cell.descLabel.text = [NSString stringWithFormat:@"Work Set #%d", (int)(indexPath.row - (4 + self.exercise.numWarmupSets))];
-        cell.textField.text = @"";
+        //cell.textField.text = @"";
     }
 
     cell.textField.inputAccessoryView = self.numberToolbar;
@@ -92,7 +92,7 @@ static const NSString *cellID = @"detailCellID";
 }
 
 -(void)doneWithNumberPad{
-    NSLog(@"got here");
+    //NSLog(@"got here");
     [self.view endEditing:YES];
 }
 
@@ -135,5 +135,10 @@ static const NSString *cellID = @"detailCellID";
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
 
 @end
