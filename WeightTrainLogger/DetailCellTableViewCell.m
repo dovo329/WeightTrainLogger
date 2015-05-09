@@ -22,18 +22,19 @@
         self.textField.backgroundColor = [UIColor blueColor];
         self.plateCalcView.backgroundColor = [UIColor orangeColor];
         
-        self.descLabel.frame = CGRectMake(0.0, 80.0, 320.0, 10.0);
-        self.textField.frame = CGRectMake(0.0, 120.0, 320.0, 10.0);
+        //self.descLabel.frame = CGRectMake(0.0, 80.0, 320.0, 10.0);
+        //self.textField.frame = CGRectMake(0.0, 120.0, 320.0, 10.0);
         self.plateCalcView.frame = CGRectMake(0.0, 200.0, 320.0, 10.0);
         
         [self.contentView addSubview:self.descLabel];
-        //[self.contentView addSubview:self.textField];
+        [self.contentView addSubview:self.textField];
         //[self.contentView addSubview:self.plateCalcView];
         
     
         NSMutableArray *constraintsMutArr = [NSMutableArray new];
         
         [self descLabelConstraints:constraintsMutArr];
+        [self textFieldConstraints:constraintsMutArr];
         
         [self.contentView addConstraints:constraintsMutArr];
     }
@@ -71,7 +72,7 @@
                                  relatedBy:NSLayoutRelationEqual
                                     toItem:self.contentView
                                  attribute:NSLayoutAttributeWidth
-                                multiplier:0.5
+                                multiplier:0.45
                                   constant:0.0];
     [mutArr addObject:descLabelWidthConstraint];
     
@@ -84,6 +85,50 @@
                                 multiplier:0.9
                                   constant:0.0];
     [mutArr addObject:descLabelHeightConstraint];
+}
+
+-(void)textFieldConstraints:(NSMutableArray *)mutArr {
+    
+    [self.textField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    NSLayoutConstraint *xPosConstraint =
+    [NSLayoutConstraint constraintWithItem:self.textField
+                                 attribute:NSLayoutAttributeTrailingMargin
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.contentView
+                                 attribute:NSLayoutAttributeTrailingMargin
+                                multiplier:1.0
+                                  constant:0.0];
+    [mutArr addObject:xPosConstraint];
+    
+    NSLayoutConstraint *yPosConstraint =
+    [NSLayoutConstraint constraintWithItem:self.textField
+                                 attribute:NSLayoutAttributeCenterY
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.contentView
+                                 attribute:NSLayoutAttributeCenterY
+                                multiplier:1.0
+                                  constant:0.0];
+    [mutArr addObject:yPosConstraint];
+    
+    NSLayoutConstraint *widthConstraint =
+    [NSLayoutConstraint constraintWithItem:self.textField
+                                 attribute:NSLayoutAttributeWidth
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.contentView
+                                 attribute:NSLayoutAttributeWidth
+                                multiplier:0.5
+                                  constant:0.0];
+    [mutArr addObject:widthConstraint];
+    
+    NSLayoutConstraint *heightConstraint =
+    [NSLayoutConstraint constraintWithItem:self.textField
+                                 attribute:NSLayoutAttributeHeight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.contentView
+                                 attribute:NSLayoutAttributeHeight
+                                multiplier:0.9
+                                  constant:0.0];
+    [mutArr addObject:heightConstraint];
 }
 
 - (void)awakeFromNib {
