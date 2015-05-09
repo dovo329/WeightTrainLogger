@@ -43,6 +43,11 @@
         int fontHeight = (int)(0.5*CGRectGetHeight(self.contentView.frame));
         self.descLabel.font = [UIFont systemFontOfSize:fontHeight];
         
+        [self.textField setKeyboardType:UIKeyboardTypeNumberPad];
+        self.textField.textAlignment = NSTextAlignmentCenter;
+        self.textField.adjustsFontSizeToFitWidth = NO;
+        self.textField.font = [UIFont systemFontOfSize:fontHeight];
+        
         self.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
         self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
     }
