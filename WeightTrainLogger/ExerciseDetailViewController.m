@@ -22,7 +22,26 @@ static const NSString *cellID = @"detailCellID";
     
     UIColor *backgroundPatternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"chrome-mesh.png"]];
     self.tableView.backgroundColor = backgroundPatternColor;
+    
+    //self.numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 0, CGRectGetHeight(self.view.frame)*0.1)];
+    self.numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    self.numberToolbar.barStyle = UIBarStyleBlackTranslucent;
+    self.numberToolbar.items = [NSArray arrayWithObjects:
+     [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                   [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                           nil];
+    [self.numberToolbar sizeToFit];
+    
+    //UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    //[self.view addGestureRecognizer:tap];
 }
+
+/*- (void)handleTap:(UITapGestureRecognizer *)recognizer
+{
+    [self.view endEditing:YES];
+    //[self.view resignFirstResponder];
+    //NSLog(@"handleTap started");
+}*/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -66,9 +85,16 @@ static const NSString *cellID = @"detailCellID";
         cell.descLabel.text = [NSString stringWithFormat:@"Work Set #%d", (int)(indexPath.row - (4 + self.exercise.numWarmupSets))];
         cell.textField.text = @"";
     }
+
+    cell.textField.inputAccessoryView = self.numberToolbar;
+    
     return cell;
 }
 
+-(void)doneWithNumberPad{
+    NSLog(@"got here");
+    [self.view endEditing:YES];
+}
 
 /*
  + (instancetype)constraintWithItem:(id)view1

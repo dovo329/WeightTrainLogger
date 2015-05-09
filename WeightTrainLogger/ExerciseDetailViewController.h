@@ -12,5 +12,6 @@
 @interface ExerciseDetailViewController : UITableViewController <UITableViewDataSource>
 
 @property (nonatomic, strong) Exercise *exercise;
+@property (nonatomic, strong) UIToolbar *numberToolbar;
 
 @end
