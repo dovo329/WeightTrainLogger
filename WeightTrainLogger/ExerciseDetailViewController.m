@@ -32,6 +32,8 @@ static const NSString *cellID = @"detailCellID";
                            nil];
     [self.numberToolbar sizeToFit];
     
+    self.title = self.exercise.name;
+    
     //UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     //[self.view addGestureRecognizer:tap];
 }
@@ -64,25 +66,36 @@ static const NSString *cellID = @"detailCellID";
     // Configure the cell...
     if (indexPath.row == 0) {
         cell.descLabel.text = @"Bodyweight";
-        //cell.textField.text = @"";
+        cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.bodyWeight];
         //cell.plateCalcView = ;
     } else if (indexPath.row == 1) {
         cell.descLabel.text = @"Work Weight";
-        //cell.textField.text = @"";
+        cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.bodyWeight];
     } else if (indexPath.row == 2) {
         cell.descLabel.text = @"Start Weight";
-        //cell.textField.text = @"";
+        cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.warmupBaseWeight];
     } else if (indexPath.row == 3) {
         cell.descLabel.text = @"# Warmup Sets";
-        //cell.textField.text = @"";
+        cell.textField.text = cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.numWarmupSets];
     } else if (indexPath.row >= 4 && indexPath.row < 4 + self.exercise.numWarmupSets) {
         cell.descLabel.text = [NSString stringWithFormat:@"Warmup Set #%d", (int)((indexPath.row-4)+1)];
-        //cell.textField.text = @"";
+        
+        int startWeight = self.exercise.warmupBaseWeight;
+        int endWeight = self.exercise.workWeight;
+        int slope = ((endWeight - startWeight)/self.exercise.numWarmupSets);
+        int warmupSetNum = (indexPath.row - 4);
+        
+        int warmupWeight = startWeight + (slope*warmupSetNum);
+        warmupWeight = round(warmupWeight/5)*5; // round to nearest 5 lbs
+        
+        cell.textField.text = cell.textField.text = [NSString stringWithFormat:@"%d",(int)warmupWeight];
+        
     } else if (indexPath.row == (4 + self.exercise.numWarmupSets)) {
         cell.descLabel.text = @"# Work Sets";
-        //cell.textField.text = @"";
+        cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.numWorkSets];
     } else {
-        cell.descLabel.text = [NSString stringWithFormat:@"Work Set #%d", (int)(indexPath.row - (4 + self.exercise.numWarmupSets))];
+        int workSetNum = (int)(indexPath.row - (4 + self.exercise.numWarmupSets));
+        cell.descLabel.text = [NSString stringWithFormat:@"Work Set #%d", workSetNum];
         //cell.textField.text = @"";
     }
 

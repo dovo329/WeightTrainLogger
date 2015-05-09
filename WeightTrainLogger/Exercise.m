@@ -11,9 +11,12 @@
 @implementation Exercise
 
 -(id)Exercise {
-    self.name = @"Squat";
-    self.numWorkSets = 3;
-    self.workWeight = 275;
+    self.name = @"";
+    self.bodyWeight = 0;
+    self.workWeight = 0;
+    self.warmupBaseWeight = 0;
+    self.numWarmupSets = 0;
+    self.numWorkSets = 0;
     
     return self;
 }

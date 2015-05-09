@@ -17,7 +17,6 @@
 		A5332ED51AFD8094000BDEB9 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = A5332ECB1AFD8094000BDEB9 /* Exercise.m */; };
 		A5332ED61AFD8094000BDEB9 /* ExerciseSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A5332ECC1AFD8094000BDEB9 /* ExerciseSettings.m */; };
 		A5332ED71AFD8094000BDEB9 /* ExerciseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5332ECD1AFD8094000BDEB9 /* ExerciseListViewController.m */; };
-		A5332ED81AFD8094000BDEB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5332ECE1AFD8094000BDEB9 /* ViewController.m */; };
 		A5332EDB1AFD87B2000BDEB9 /* DetailCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5332EDA1AFD87B2000BDEB9 /* DetailCellTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +46,10 @@
 		A5332ECB1AFD8094000BDEB9 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		A5332ECC1AFD8094000BDEB9 /* ExerciseSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseSettings.m; sourceTree = "<group>"; };
 		A5332ECD1AFD8094000BDEB9 /* ExerciseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseListViewController.m; sourceTree = "<group>"; };
-		A5332ECE1AFD8094000BDEB9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A5332ECF1AFD8094000BDEB9 /* ExerciseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDetailViewController.h; sourceTree = "<group>"; };
 		A5332ED01AFD8094000BDEB9 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		A5332ED11AFD8094000BDEB9 /* ExerciseSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseSettings.h; sourceTree = "<group>"; };
 		A5332ED21AFD8094000BDEB9 /* ExerciseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseListViewController.h; sourceTree = "<group>"; };
-		A5332ED31AFD8094000BDEB9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A5332ED91AFD87B2000BDEB9 /* DetailCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCellTableViewCell.h; sourceTree = "<group>"; };
 		A5332EDA1AFD87B2000BDEB9 /* DetailCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCellTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +99,6 @@
 				A5332ECB1AFD8094000BDEB9 /* Exercise.m */,
 				A5332ED11AFD8094000BDEB9 /* ExerciseSettings.h */,
 				A5332ECC1AFD8094000BDEB9 /* ExerciseSettings.m */,
-				A5332ED31AFD8094000BDEB9 /* ViewController.h */,
-				A5332ECE1AFD8094000BDEB9 /* ViewController.m */,
 				A5332ECF1AFD8094000BDEB9 /* ExerciseDetailViewController.h */,
 				A5332ECA1AFD8094000BDEB9 /* ExerciseDetailViewController.m */,
 				A5332ED21AFD8094000BDEB9 /* ExerciseListViewController.h */,
@@ -246,7 +241,6 @@
 				A5332EAA1AFD8038000BDEB9 /* WeightTrainLogger.xcdatamodeld in Sources */,
 				A5332ED51AFD8094000BDEB9 /* Exercise.m in Sources */,
 				A5332EDB1AFD87B2000BDEB9 /* DetailCellTableViewCell.m in Sources */,
-				A5332ED81AFD8094000BDEB9 /* ViewController.m in Sources */,
 				A5332ED71AFD8094000BDEB9 /* ExerciseListViewController.m in Sources */,
 				A5332EA71AFD8038000BDEB9 /* AppDelegate.m in Sources */,
 				A5332EA41AFD8038000BDEB9 /* main.m in Sources */,
