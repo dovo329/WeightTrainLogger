@@ -37,6 +37,9 @@ static const NSString *cellID = @"cellID";
     //subView.frame = CGRectMake(20.0, 80.0, 20.0, 20.0);
     //subView.backgroundColor = [UIColor blueColor];
     //[self.view addSubview:subView];
+    
+    UIColor *backgroundPatternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"chrome-mesh.png"]];
+    self.tableView.backgroundColor = backgroundPatternColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +66,8 @@ static const NSString *cellID = @"cellID";
     if (cell==nil) {
         // create the cell
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:(NSString *)cellID];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
+        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
     }
     // Configure the cell...
     ExerciseSettings *exSettings = [ExerciseSettings sharedInstance];
