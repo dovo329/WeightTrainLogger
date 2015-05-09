@@ -39,7 +39,7 @@ static const NSString *cellID = @"detailCellID";
     workWeightLabel.textAlignment = NSTextAlignmentCenter;
     workWeightLabel.numberOfLines = 0;
     workWeightLabel.font = [UIFont systemFontOfSize:200];
-    workWeightLabel.adjustsFontSizeToFitWidth = YES;
+     workWeightLabel.adjustsFontSizeToFitWidth = YES;
     workWeightLabel.backgroundColor = [UIColor purpleColor];
     
     [self.view addSubview:workWeightLabel];
@@ -135,16 +135,16 @@ static const NSString *cellID = @"detailCellID";
         cell.descLabel.text = @"Work Weight";
         cell.textField.text = @"";
     } else if (indexPath.row == 2) {
-        cell.descLabel.text = @"Warmup Base Weight";
+        cell.descLabel.text = @"Start Weight";
         cell.textField.text = @"";
     } else if (indexPath.row == 3) {
-        cell.descLabel.text = @"# Of Warmup Sets";
+        cell.descLabel.text = @"# Warmup Sets";
         cell.textField.text = @"";
     } else if (indexPath.row >= 4 && indexPath.row < 4 + self.exercise.numWarmupSets) {
         cell.descLabel.text = [NSString stringWithFormat:@"Warmup Set #%d", (int)((indexPath.row-4)+1)];
         cell.textField.text = @"";
     } else if (indexPath.row == (4 + self.exercise.numWarmupSets)) {
-        cell.descLabel.text = @"# Of Work Sets";
+        cell.descLabel.text = @"# Work Sets";
         cell.textField.text = @"";
     } else {
         cell.descLabel.text = [NSString stringWithFormat:@"Work Set #%d", (int)(indexPath.row - (4 + self.exercise.numWarmupSets))];

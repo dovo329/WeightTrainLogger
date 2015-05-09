@@ -24,7 +24,7 @@
         
         //self.descLabel.frame = CGRectMake(0.0, 80.0, 320.0, 10.0);
         //self.textField.frame = CGRectMake(0.0, 120.0, 320.0, 10.0);
-        self.plateCalcView.frame = CGRectMake(0.0, 200.0, 320.0, 10.0);
+        //self.plateCalcView.frame = CGRectMake(0.0, 200.0, 320.0, 10.0);
         
         [self.contentView addSubview:self.descLabel];
         [self.contentView addSubview:self.textField];
@@ -32,11 +32,16 @@
         
     
         NSMutableArray *constraintsMutArr = [NSMutableArray new];
-        
         [self descLabelConstraints:constraintsMutArr];
         [self textFieldConstraints:constraintsMutArr];
-        
         [self.contentView addConstraints:constraintsMutArr];
+
+        //self.descLabel.lineBreakMode = NSLineBreakByClipping;
+        self.descLabel.textAlignment = NSTextAlignmentLeft;
+        self.descLabel.numberOfLines = 1;
+        self.descLabel.adjustsFontSizeToFitWidth = NO;
+        int fontHeight = (int)(0.5*CGRectGetHeight(self.contentView.frame));
+        self.descLabel.font = [UIFont systemFontOfSize:fontHeight];
     }
     
     return self;
@@ -72,7 +77,7 @@
                                  relatedBy:NSLayoutRelationEqual
                                     toItem:self.contentView
                                  attribute:NSLayoutAttributeWidth
-                                multiplier:0.45
+                                multiplier:0.7
                                   constant:0.0];
     [mutArr addObject:descLabelWidthConstraint];
     
@@ -116,7 +121,7 @@
                                  relatedBy:NSLayoutRelationEqual
                                     toItem:self.contentView
                                  attribute:NSLayoutAttributeWidth
-                                multiplier:0.5
+                                multiplier:0.3
                                   constant:0.0];
     [mutArr addObject:widthConstraint];
     
