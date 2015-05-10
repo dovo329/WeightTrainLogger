@@ -11,15 +11,15 @@
 
 @class ExerciseDetailViewController;
 
-@protocol ExerciseDetailViewControllerDelegate <NSObject>
+/*@protocol ExerciseDetailViewControllerDelegate <NSObject>
 - (void)addItemViewController:(ExerciseDetailViewController *)controller didFinishEnteringItem:(NSString *)item;
-@end
+@end*/
 
 @interface ExerciseDetailViewController : UITableViewController <UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) Exercise *exercise;
 @property (nonatomic, strong) UIToolbar *numberToolbar;
 
-@property (nonatomic, weak) id <ExerciseDetailViewControllerDelegate> delegate;
+//@property (nonatomic, weak) id <ExerciseDetailViewControllerDelegate> delegate;
 
 @end

@@ -17,10 +17,10 @@ static const NSString *cellID = @"detailCellID";
 
 @implementation ExerciseDetailViewController
 
--(void)viewWillDisappear:(BOOL)animated {
+/*-(void)viewWillDisappear:(BOOL)animated {
     NSString *itemToPassBack = @"Pass this value back to ListViewController";
     [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack];
-}
+}*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -117,7 +117,7 @@ static const NSString *cellID = @"detailCellID";
     } else if (indexPath.row == 1) {
         cell.descLabel.text = @"Work Weight";
         //cell.textLabel.text = @"Work Weight";
-        cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.bodyWeight];
+        cell.textField.text = [NSString stringWithFormat:@"%d",(int)self.exercise.workWeight];
         
         //NSLog(@"1 cell.textField.tag == %d", cell.textField.tag);
     } else if (indexPath.row == 2) {

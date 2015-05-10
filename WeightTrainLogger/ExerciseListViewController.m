@@ -17,10 +17,10 @@ static const NSString *cellID = @"cellID";
 
 @implementation ExerciseListViewController
 
-- (void)addItemViewController:(ExerciseDetailViewController *)controller didFinishEnteringItem:(NSString *)item
+/*- (void)addItemViewController:(ExerciseDetailViewController *)controller didFinishEnteringItem:(NSString *)item
 {
     NSLog(@"This was returned from DetailViewController %@",item);
-}
+}*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
