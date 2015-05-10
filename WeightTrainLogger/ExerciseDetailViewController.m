@@ -75,6 +75,11 @@ static const NSString *cellID = @"detailCellID";
 }
 
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    //clear out old text if putting in a new number (I think this is more convenient than requiring a delete first
+    textField.text = @"";
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     // textField.tag == indexPath.row
     //NSLog(@"got here; textField.tag==%d", textField.tag);
