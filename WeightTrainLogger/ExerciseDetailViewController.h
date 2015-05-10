@@ -15,7 +15,7 @@
 - (void)addItemViewController:(ExerciseDetailViewController *)controller didFinishEnteringItem:(NSString *)item;
 @end*/
 
-@interface ExerciseDetailViewController : UITableViewController <UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate>
+@interface ExerciseDetailViewController : UITableViewController <UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate, UITableViewDelegate>
 
 @property (nonatomic, strong) Exercise *exercise;
 @property (nonatomic, strong) UIToolbar *numberToolbar;

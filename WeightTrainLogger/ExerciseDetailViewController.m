@@ -232,4 +232,9 @@ static const NSString *cellID = @"detailCellID";
     [self.view endEditing:YES];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view endEditing:YES];
+}
+
 @end
