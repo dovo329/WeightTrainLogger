@@ -83,6 +83,7 @@ static const NSString *cellID = @"detailCellID";
         self.exercise.numWorkSets = [textField.text intValue];
     } else {
         int workSetNum = (int)((textField.tag - (4 + self.exercise.numWarmupSets))-1);
+        [self.exercise.workSetRepArr removeObjectAtIndex:workSetNum];
         [self.exercise.workSetRepArr insertObject:[NSNumber numberWithInt:[textField.text intValue]] atIndex:workSetNum];
     }
     [self.tableView reloadData];
