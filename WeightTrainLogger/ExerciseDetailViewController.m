@@ -62,7 +62,7 @@ static const NSString *cellID = @"detailCellID";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     int newNumRows = 4+self.exercise.numWarmupSets+1+self.exercise.numWorkSets;
-    NSLog(@"numberOfRowsInSection got called: newNumRows=%d", newNumRows);
+    //NSLog(@"numberOfRowsInSection got called: newNumRows=%d", newNumRows);
     
     // update workSetRepArr if needed with blanks
     while ([self.exercise.workSetRepArr count]>self.exercise.numWorkSets) {
@@ -235,6 +235,13 @@ static const NSString *cellID = @"detailCellID";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end

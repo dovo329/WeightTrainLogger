@@ -23,7 +23,12 @@
     
     ExerciseListViewController *vc = [[ExerciseListViewController alloc] init];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nc;
+
+    NSArray* controllers = [NSArray arrayWithObjects:nc, nil];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = controllers;
+    
+    self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor redColor];
     [self.window makeKeyAndVisible];
     
