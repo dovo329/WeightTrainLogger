@@ -93,12 +93,12 @@
 		A5332EA01AFD8038000BDEB9 /* WeightTrainLogger */ = {
 			isa = PBXGroup;
 			children = (
-				A5332ED91AFD87B2000BDEB9 /* DetailCellTableViewCell.h */,
-				A5332EDA1AFD87B2000BDEB9 /* DetailCellTableViewCell.m */,
 				A5332ED01AFD8094000BDEB9 /* Exercise.h */,
 				A5332ECB1AFD8094000BDEB9 /* Exercise.m */,
 				A5332ED11AFD8094000BDEB9 /* ExerciseSettings.h */,
 				A5332ECC1AFD8094000BDEB9 /* ExerciseSettings.m */,
+				A5332ED91AFD87B2000BDEB9 /* DetailCellTableViewCell.h */,
+				A5332EDA1AFD87B2000BDEB9 /* DetailCellTableViewCell.m */,
 				A5332ECF1AFD8094000BDEB9 /* ExerciseDetailViewController.h */,
 				A5332ECA1AFD8094000BDEB9 /* ExerciseDetailViewController.m */,
 				A5332ED21AFD8094000BDEB9 /* ExerciseListViewController.h */,
@@ -434,6 +434,7 @@
 				A5332EC61AFD8038000BDEB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5332EC71AFD8038000BDEB9 /* Build configuration list for PBXNativeTarget "WeightTrainLoggerTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +443,7 @@
 				A5332EC91AFD8038000BDEB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

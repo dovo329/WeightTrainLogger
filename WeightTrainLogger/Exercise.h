@@ -16,6 +16,7 @@
 @property (nonatomic) int warmupBaseWeight;
 @property (nonatomic) int numWarmupSets;
 @property (nonatomic) int numWorkSets;
+@property (nonatomic) NSMutableArray *workSetRepArr;
 
 -(id)Exercise;
 

@@ -15,5 +15,6 @@
 
 +(ExerciseSettings *)sharedInstance;
 -(int)count;
+//-(void)setWorkSetRepForExercise:(Exercise *)exercise set:(int)set reps:(int)reps;
 
 @end

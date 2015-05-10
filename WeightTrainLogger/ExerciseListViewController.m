@@ -8,7 +8,6 @@
 
 #import "ExerciseListViewController.h"
 #import "ExerciseSettings.h"
-#import "ExerciseDetailViewController.h"
 
 static const NSString *cellID = @"cellID";
 
@@ -17,6 +16,11 @@ static const NSString *cellID = @"cellID";
 @end
 
 @implementation ExerciseListViewController
+
+- (void)addItemViewController:(ExerciseDetailViewController *)controller didFinishEnteringItem:(NSString *)item
+{
+    NSLog(@"This was returned from DetailViewController %@",item);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +33,7 @@ static const NSString *cellID = @"cellID";
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor yellowColor];
+    //self.view.backgroundColor = [UIColor yellowColor];
     self.title = @"Exercises";
     
     //UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(40.0, 80.0, 40.0, 40.0)];
@@ -38,8 +42,8 @@ static const NSString *cellID = @"cellID";
     //subView.backgroundColor = [UIColor blueColor];
     //[self.view addSubview:subView];
     
-    UIColor *backgroundPatternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"chrome-mesh.png"]];
-    self.tableView.backgroundColor = backgroundPatternColor;
+    //UIColor *backgroundPatternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"chrome-mesh.png"]];
+    //self.tableView.backgroundColor = backgroundPatternColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,8 +70,8 @@ static const NSString *cellID = @"cellID";
     if (cell==nil) {
         // create the cell
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:(NSString *)cellID];
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
-        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
+        //cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
+        //cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
     }
     // Configure the cell...
     ExerciseSettings *exSettings = [ExerciseSettings sharedInstance];

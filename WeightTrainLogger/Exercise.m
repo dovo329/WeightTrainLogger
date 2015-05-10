@@ -17,6 +17,7 @@
     self.warmupBaseWeight = 0;
     self.numWarmupSets = 0;
     self.numWorkSets = 0;
+    self.workSetRepArr = [NSMutableArray arrayWithCapacity:self.numWorkSets];
     
     return self;
 }

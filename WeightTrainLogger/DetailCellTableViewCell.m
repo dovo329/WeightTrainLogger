@@ -14,11 +14,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
+        self.backgroundColor = [UIColor colorWithHue:0.6 saturation:0.2 brightness:1.0 alpha:1.0];
+        
         self.descLabel = [[UILabel alloc] init];
         self.textField = [[UITextField alloc] init];
         self.plateCalcView = [[UIView alloc] init];
         
-        self.descLabel.backgroundColor = [UIColor clearColor];
+        //self.descLabel.backgroundColor = [UIColor clearColor];
+        self.descLabel.backgroundColor = self.backgroundColor;
         self.textField.backgroundColor = [UIColor whiteColor];
         //self.plateCalcView.backgroundColor = [UIColor orangeColor];
         
@@ -40,7 +43,7 @@
         self.descLabel.textAlignment = NSTextAlignmentLeft;
         self.descLabel.numberOfLines = 1;
         self.descLabel.adjustsFontSizeToFitWidth = NO;
-        int fontHeight = (int)(0.5*CGRectGetHeight(self.contentView.frame));
+        int fontHeight = (int)(0.4*CGRectGetHeight(self.contentView.frame));
         self.descLabel.font = [UIFont systemFontOfSize:fontHeight];
         
         [self.textField setKeyboardType:UIKeyboardTypeNumberPad];
@@ -48,8 +51,8 @@
         self.textField.adjustsFontSizeToFitWidth = NO;
         self.textField.font = [UIFont systemFontOfSize:fontHeight];
         
-        self.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
-        self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
+        //self.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellNormal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
+        //self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"CellHighlight.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0]];
     }
     
     return self;

@@ -32,6 +32,7 @@
     exercise1.warmupBaseWeight = 45;
     exercise1.numWarmupSets = 4;
     exercise1.numWorkSets = 3;
+    exercise1.workSetRepArr = [NSMutableArray arrayWithCapacity:exercise1.numWorkSets];
     [self.exerciseObjects addObject:exercise1];
     
     Exercise *exercise2 = [[Exercise alloc] init];
@@ -41,6 +42,7 @@
     exercise2.warmupBaseWeight = 135;
     exercise2.numWarmupSets = 3;
     exercise2.numWorkSets = 1;
+    exercise2.workSetRepArr = [NSMutableArray arrayWithCapacity:exercise2.numWorkSets];
     [self.exerciseObjects addObject:exercise2];
     
     Exercise *exercise3 = [[Exercise alloc] init];
@@ -50,6 +52,7 @@
     exercise3.warmupBaseWeight = 45;
     exercise3.numWarmupSets = 4;
     exercise3.numWorkSets = 3;
+    exercise3.workSetRepArr = [NSMutableArray arrayWithCapacity:exercise3.numWorkSets];
     [self.exerciseObjects addObject:exercise3];
     
     return self;
@@ -58,5 +61,9 @@
 -(int)count {
     return (int)([self.exerciseObjects count]);
 }
+
+/*-(void)setWorkSetRepForExercise:(Exercise *)exercise set:(int)set reps:(int)reps {
+    [exercise.workSetRepArr insertObject:[NSNumber numberWithInt:reps] atIndex:set];
+}*/
 
 @end

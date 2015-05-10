@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExerciseDetailViewController.h"
 
-@interface ExerciseListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ExerciseListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ExerciseDetailViewControllerDelegate>
 
 @end
